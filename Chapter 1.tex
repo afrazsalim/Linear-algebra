@@ -1,0 +1,166 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+\title{Chapter 1 : Eerstegraadsvergelikingen}
+\author{Afraz Salim}
+\maketitle
+\section{Bepaal of de uitspraken waar of vals zijn en verklaar je antwoorden}
+\begin{itemize}
+\item Als A en B matrixs zijn zodat $AB = O$ dan is $A = 0$ of $B = 0$.
+\newline
+Antwoord: vals.
+\newline
+Tegenvoorbeeld: $A = 
+\begin{bmatrix}
+1 &-1 \\
+-1&  1\\
+\end{bmatrix}
+$
+$ B = 
+\begin{bmatrix}
+1 & 1\\
+1 & 1\\
+\end{bmatrix}
+$
+Nu $A*B = 0$ maar $A  \neq 0$ nog $B = 0$.
+
+\item Als $A ^2 = \mathbb{1}$ en $B^2 = \mathbb{1}$ dan $(AB)^-1 = BA$.
+\newline
+Antwoord: waar.
+\newline
+Wij vermenigvuldigen beide zijden met $AB$ zodat $AB(AB)^-1 = AB^2A $\newline
+$AB(AB)^-1 = \mathbb{1}$ en $A(B^2 = \mathbb{1}$ Dit is al gegeven $) A$ \newline
+$\mathbb{1} = A*\mathbb{1}*A$\newline
+$\mathbb{1} = A^2$\newline
+$\mathbb{1} = \mathbb{1}$\newline
+
+\item  Als $A$ en $B$ inverteerbaar matrices zijn dan is $A + B$ ook inverteerbaar.\newline
+Antwoord: vals\newline
+Tegenvoorbeeld:
+   $A = \begin{bmatrix}
+   1 & 0\\
+   0 & 1\\
+   \end{bmatrix}$
+   
+   $B = \begin{bmatrix}
+   -1 & 0\\
+    1 & 1\\
+   \end{bmatrix}
+   $
+A en B zijn inverteerbaar maar niet $A+B = 0$.
+\item If $A$ en $B$ en $AB$ symmetrisch zijn dan is $AB = BA$.\newline
+ Antwoord waar.\newline
+ Proof: $AB = (AB)^T$ omdat $AB$ Symmetrisch is dan $AB = B^T*A^T = BA$.
+
+\item Als $A$ en $B$ zijn symmetrisch dan is $AB$ ook symmetrisch.\newline
+Antwoord: waar
+\newline
+Proof:
+Omdat $A$ en $B$ symmetrisch zijn ,$a_{ij} = a_{ji}$ en $b_{ij} = b_{ji}$.\newline
+Let $c_{ij}  = a_{ij}*b_{ij}$ en $c_{ji} = a_{ji}*b_{ji}$ dan $c_{ij} = c_{ji}$ Symmetrisch.
+
+\item Als $A$ is niet inverteerbaar dan is ook $AB$ niet inverteerbaar.
+\newline
+Antwoord waar:\newline
+$f(A.B) = f(A).f(B)$ en indien $f(A) = 0$ dan voor elke $B$ is $AB = 0$.\newline
+\item Als $E_1$ en $E_2$ twee elementaire matrices zijn dan is $E_1*E_2 = E_2*E_1$.
+\newline
+Antwoord: Niet waar.
+Tegenvoorbeeld:
+  $A = \begin{bmatrix}
+  1 & 2\\
+  0 & 1\\
+  \end{bmatrix}
+ $
+$B = \begin{bmatrix}
+1 & 0\\
+3 & 1\\
+\end{bmatrix}$
+\newline
+$A*B \neq B*A$.
+\newline
+
+\item Exercise $21$:\newline
+$A*A^T$ en $A+ A^T$ zijn symmetrisch.
+\newline
+Antwoord:waar
+\newline
+$C = A*A^T$ dan $c_{ij} = a_{ij}*(a_{ji})^T  ==> c_{ij} = a_{ij}*a_{ij}$  .\newline
+Dus $c_{ij}$ is symmetrisch want elk element wordt met zichzelf vermigvuldigd.
+\newline
+\item $A-A^T$ is scheefsymmetrisch.
+Antwoord:Waar \newline
+Een matric is scheefsymmetrisch indien $A^T = -A$.\newline
+$(A-A^T)^T = -(A-A^T)$ \newline
+$A^T - A = -A + A^T$\newline
+$A^T - A =  -A + A^T$\newline
+Proved.
+\newline
+Nilpoten: Een matrix is niet-nilpoten indien voor elke $k$ $A^k \neq 0$.\newline
+\item Toon aan dat een inverteerbare matrix nipotent is.
+\newline
+Stel dat een matrix niet-nilpoten is dan is die matrix inverteerbaar en voor elke $k$ $A^k $ is hetzelfda als een A matrix $k$ keer met zichzelf vermenigvuldigen.\newline
+TODO :(
+
+
+\item Bepaal Lu-decompositie van een matrix:\newline
+$A = \begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1\\
+\end{bmatrix}
+|
+\begin{bmatrix}
+1 & -1 & 0\\
+-1 & 2 & -1\\
+0 & -1 & 2\\
+\end{bmatrix}\overset{r_1+r_2}{\longrightarrow} 
+$
+
+$\overset{R2 -> R2+R1}{\longrightarrow}\begin{bmatrix}
+1 & 0 & 0\\
+1 & 1 & 0\\
+0 & 0 & 1\\
+\end{bmatrix}
+|
+\begin{bmatrix}
+1 & -1 & 0\\
+0 & 1 & -1\\
+0 & -1 & 2\\
+\end{bmatrix} $
+
+
+$\overset{R3 -> R3+R2}{\longrightarrow}\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 1 & 1\\
+\end{bmatrix}
+|
+\begin{bmatrix}
+E_1
+\end{bmatrix}
+\begin{bmatrix}
+1 & -1 & 0\\
+0 & 1 & -1\\
+0 & 0 & 1\\
+\end{bmatrix} $
+\newline
+$A =LU$ dus $A = {E_1}^{-1}*{E_2}^{-1}*U$
+\newline
+$E_1^{-1} = \begin{bmatrix}
+1 & 0 & 0\\
+1 & 1 & 0\\
+0 & -1 & 1\\
+\end{bmatrix}$
+\newline
+$E_2^{-1} = \begin{bmatrix}
+1 & 0 & 0\\
+-1 & 1 & 0\\
+0 & 0 & 1\\
+\end{bmatrix}$
+\newline
+
+$E_2^{-1}*E_1{-1} = L$
+\end{itemize}
+\end{document}
